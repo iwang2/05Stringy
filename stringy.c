@@ -43,6 +43,10 @@ char *mystrchr(char *s, char c){
 
 
 int main(){
+  //strcpy
+  //strlen
+  //strcmp
+  //strchr
   char* str1 = "The quick brown fox jumps over the lazy dog.";
   char test = 'x';
   printf("str1 is: %s\n",str1);
@@ -53,7 +57,8 @@ int main(){
   printf("The test character is now: %c\n",test);
   printf("Str1 and test run through my strchr: %s\n",mystrchr(str1,test));
   printf("Str1 and test run through normal strchr: %s\n",strchr(str1,test));
-    
+
+  //strcat
 
   return 0;
 }
