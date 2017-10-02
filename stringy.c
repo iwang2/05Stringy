@@ -48,36 +48,29 @@ char *mystrchr(char *s, char c){
 
 int main(){
   //strcpy
+  printf("\nSTRCPY  ---------------------------\n");
   //strlen
   //strcmp
-  printf("STRNCMP --------------------------------------------\n");
+  printf("\nSTRNCMP ---------------------------\n");
   char *s1 = "abc", *s2 = "def";
   printf("strncmp(abc, def, 3)    --> %d\n", strncmp(s1, s2, 3));
-  printf("mystrncmp               --> %d\n", mystrncmp(s1, s2, 3));
-  
-  printf("\n");
+  printf("           mystrncmp    --> %d\n", mystrncmp(s1, s2, 3));
 
   printf("strncmp(def, abc, 3)    --> %d\n", strncmp(s2, s1, 3));
-  printf("mystrncmp               --> %d\n", mystrncmp(s2, s1, 3));
-
-  printf("\n");
+  printf("           mystrncmp    --> %d\n", mystrncmp(s2, s1, 3));
 
   char *s3 = "abcdef";
   printf("strncmp(abc, abcdef, 3) --> %d\n", strncmp(s1, s3, 3));
-  printf("mystrncmp               --> %d\n", mystrncmp(s1, s3, 3));
-
-  printf("\n");
+  printf("           mystrncmp    --> %d\n", mystrncmp(s1, s3, 3));
 
   printf("strncmp(abc, abcdef, 7) --> %d\n", strncmp(s1, s3, 7));
-  printf("mystrncmp               --> %d\n", mystrncmp(s1, s3, 7));
-
-  printf("\n");
+  printf("           mystrncmp    --> %d\n", mystrncmp(s1, s3, 7));
 
   printf("strncmp(abc, abc, 4)    --> %d\n", strncmp(s1, s1, 4));
-  printf("mystrncmp               --> %d\n", mystrncmp(s1, s1, 4));
+  printf("           mystrncmp    --> %d\n", mystrncmp(s1, s1, 4));
   
   //strchr
-  printf("STRCHR ----------------------------------------------\n");
+  printf("\nSTRCHR  ---------------------------\n");
   char* str1 = "The quick brown fox jumps over the lazy dog.";
   char test = 'x';
   printf("str1 is: %s\n",str1);
