@@ -7,19 +7,23 @@
 //strlen
 
 //strncmp
-int mycmpn(char *s1, char *s2, int n){
-  int length = strlen(s1);
-  int i = length;
-  if(strlen(s2) < length){
-    length = strlen(s2);
+int mystrncmp(char *s1, char *s2, int n){
+  int l1 = strlen(s1), l2 = strlen(s2);
+  int i = 0, count = n;
+  int c1, c2;
+  while(count){
+    if(l1 > n - count){
+      c1 = s1[n - count];
+    }
+    if(l2 > n - count){
+      c2 = s2[n - count];
+    }
+    if(c1 != c2){
+      break;
+    }
+    count--;
   }
-  if(length > n){
-    length = n;
-  }
-  while(s1[length - i] == s2[length - i]){
-    i++;
-  }
-  return s1[length - i] - s1[length - i];
+  return c1 - c2;
 }
 
 //strchr
@@ -46,7 +50,34 @@ int main(){
   //strcpy
   //strlen
   //strcmp
+  printf("STRNCMP --------------------------------------------\n");
+  char *s1 = "abc", *s2 = "def";
+  printf("strncmp(abc, def, 3)    --> %d\n", strncmp(s1, s2, 3));
+  printf("mystrncmp               --> %d\n", mystrncmp(s1, s2, 3));
+  
+  printf("\n");
+
+  printf("strncmp(def, abc, 3)    --> %d\n", strncmp(s2, s1, 3));
+  printf("mystrncmp               --> %d\n", mystrncmp(s2, s1, 3));
+
+  printf("\n");
+
+  char *s3 = "abcdef";
+  printf("strncmp(abc, abcdef, 3) --> %d\n", strncmp(s1, s3, 3));
+  printf("mystrncmp               --> %d\n", mystrncmp(s1, s3, 3));
+
+  printf("\n");
+
+  printf("strncmp(abc, abcdef, 7) --> %d\n", strncmp(s1, s3, 7));
+  printf("mystrncmp               --> %d\n", mystrncmp(s1, s3, 7));
+
+  printf("\n");
+
+  printf("strncmp(abc, abc, 4)    --> %d\n", strncmp(s1, s1, 4));
+  printf("mystrncmp               --> %d\n", mystrncmp(s1, s1, 4));
+  
   //strchr
+  printf("STRCHR ----------------------------------------------\n");
   char* str1 = "The quick brown fox jumps over the lazy dog.";
   char test = 'x';
   printf("str1 is: %s\n",str1);
