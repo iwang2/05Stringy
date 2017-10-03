@@ -13,6 +13,13 @@ char *mystrcpy(char *dest, char *src){
 }
 
 //strlen
+int mystrlen(char *s){
+  int i = 0;
+  for(i;s[i];i++){
+  }
+  return i;
+  
+}
 
 //strncmp
 int mystrncmp(char *s1, char *s2, int n){
@@ -79,6 +86,12 @@ int main(){
   
   //strlen
   printf("\nSTRLEN  ---------------------------\n\n");
+  char *greeting = "Greetings!";
+  printf("String greeting is: %s\n",greeting);
+  printf("Expected length: 10\n");
+  printf("Length as given by normal strlen: %d\n", strlen(greeting));
+  printf("Length as given by my strlen: %d\n\n", mystrlen(greeting));
+  
   
   //strcmp
   printf("\nSTRNCMP ---------------------------\n\n");
