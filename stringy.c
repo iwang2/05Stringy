@@ -44,6 +44,22 @@ char *mystrchr(char *s, char c){
   return ret;
 }
 //strcat
+char *mystrcat(char *s1, char *s2){
+  char *c = s1;
+  //Gets pointer to the end of first string, right where the null is.
+  for(c;*c;c++){
+  }
+
+  //Copies char by char until the end of the source is reached
+  int i = 0;
+  for(i;s2[i];i++){
+    *c = s2[i];
+    c++;
+  }
+
+  //Returns the new concattenated destination string.
+  return s1;
+}
 
 //strstr (to be extra)
 
@@ -92,14 +108,34 @@ int main(){
   char test = 'x';
   printf("str1 is: %s\n",str1);
   printf("The test character is: %c\n",test);
-  printf("Str1 and test run through my strchr: %s\n",mystrchr(str1,test));
-  printf("Str1 and test run through normal strchr: %s\n",strchr(str1,test));
+  printf("str1 and test run through my strchr: %s\n",mystrchr(str1,test));
+  printf("str1 and test run through normal strchr: %s\n\n",strchr(str1,test));
   test = '!';
   printf("The test character is now: %c\n",test);
-  printf("Str1 and test run through my strchr: %s\n",mystrchr(str1,test));
-  printf("Str1 and test run through normal strchr: %s\n",strchr(str1,test));
+  printf("str1 and test run through my strchr: %s\n",mystrchr(str1,test));
+  printf("str1 and test run through normal strchr: %s\n\n",strchr(str1,test));
+  printf("Same behavior achieved!\n");
 
   //strcat
+  printf("\nSTRCAT  ---------------------------\n\n");
+  char str2[200] = "I'm here to kick butt and drink milk...";
+  char str3[200] = "and I just finished my milk.";
+  printf("str2 is: %s\n",str2);
+  printf("str3 is: %s\n",str3);
+  printf("Concattenated with normal strcat: %s\n\n",strcat(str2,str3));
+  printf("str2 is: %s\n\n\n",str2);
+
+  char str4[200] = "I'm here to kick butt and drink milk...";
+  char str5[200] = "and I just finished my milk.";
+  printf("NEW str4 is: %s\n",str4);
+  printf("NEW str5 is: %s\n",str5);
+  printf("Concattenated with my strcat: %s\n\n",mystrcat(str4,str5));
+  printf("str4 is: %s\n\n\n",str4);
+
+  printf("Same behavior achieved!\n");
+
+
+  
 
   return 0;
 }
