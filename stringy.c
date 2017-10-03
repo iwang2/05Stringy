@@ -3,6 +3,14 @@
 #include <string.h>
 
 //strcpy
+char *mystrcpy(char *dest, char *src){
+  int i = 0;
+  while(src[i]){
+    dest[i] = src[i];
+    i++;
+  }
+  return dest;
+}
 
 //strlen
 
@@ -18,9 +26,7 @@ int mystrncmp(char *s1, char *s2, int n){
     if(l2 > n - count){
       c2 = s2[n - count];
     }
-    if(c1 != c2){
-      break;
-    }
+    if(c1 != c2) break;
     count--;
   }
   return c1 - c2;
@@ -49,6 +55,14 @@ char *mystrchr(char *s, char c){
 int main(){
   //strcpy
   printf("\nSTRCPY  ---------------------------\n");
+  char cp1[5] = "hello", *cp2 = "Hi, how are you?";
+  printf("strcpy(hello, Hi, how are you?) --> %s\n", strcpy(cp1, cp2));
+  printf("         mystrcpy --> %s\n", mystrcpy(cp1, cp2));
+
+  char cp3[5] = "hello", *cp4 = "hi";
+  printf("strcpy(hello, hi)               --> %s\n", strcpy(cp3, cp4));
+  printf("         mystrcpy               --> %s\n", mystrcpy(cp3, cp4));
+  
   //strlen
   //strcmp
   printf("\nSTRNCMP ---------------------------\n");
