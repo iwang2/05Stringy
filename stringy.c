@@ -38,18 +38,15 @@ int mystrncmp(char *s1, char *s2, int n){
 
 //strchr
 char *mystrchr(char *s, char c){
-  char *ret = 0;
-  int i = 0;
-  
+  int i = 0;  
   while(s[i]){
     if(s[i] == c){
-      ret = s + i;
-      break;
+      return s + i;
     }
     i++;
   }
   
-  return ret;
+  return 0;
 }
 //strcat
 char *mystrcat(char *s1, char *s2){
@@ -70,5 +67,28 @@ char *mystrcat(char *s1, char *s2){
 }
 
 //strstr (to be extra)
+char *mystrstr(char *s1, char *s2){
+  int i = 0;
+  for(i;s1[i];i++){
+    if(s1[i] == s2[0]){
+      int j = 1;
+      int k = i+1;
+      int found = 1;
+      for(j;s2[j];j++){
+	if(s1[k] != s2[j]){
+	  found = 0;
+	  break;
+	}
+	k++;
+      }
+
+      if(found){
+	return s1 + i;
+      }
+    }
+  }
+  return 0;
+  
+}
 
 

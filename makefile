@@ -8,6 +8,7 @@ main.o: main.c stringy.h
 	gcc -c main.c
 
 clean:
+	rm stringy
 	rm *.o
 	rm *~
 

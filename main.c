@@ -79,6 +79,22 @@ int main(){
 
   printf("Same behavior achieved!\n");
 
+  //strstr
+  printf("\nSTRSTR (EXTRA)  ---------------------------\n\n");
+  printf("str1 is: %s\n",str1);
+  char *str6 = "fox";
+  printf("str6 is: %s\n",str6);
+  printf("str1 and str6 run through my strstr: %s\n",mystrstr(str1,str6));
+  printf("str1 and str6 run through normal strstr: %s\n\n",strstr(str1,str6));
+  char *str7 = "jumpz";
+  printf("str7 is now: %s\n",str7);
+  printf("str1 and str7 run through my strstr: %s\n",mystrstr(str1,str7));
+  printf("str1 and str7 run through normal strstr: %s\n\n",strstr(str1,str7));
+  printf("Same behavior achieved!\n");
+  
+  
+
+
 
   
 
